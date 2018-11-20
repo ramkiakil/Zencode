@@ -13,11 +13,7 @@ import { Container, Header, Content, List, ListItem,Text,Left, Right, Icon, Acco
 import Spinner from 'react-native-loading-spinner-overlay';
 
 var moment = require('moment');
-const dataArray = [
-  { title: "", content: "" },
-  { title: "", content: "" },
-  { title: "", content: "" }
-];
+
  export default class App extends Component {
    constructor(){
      super();
@@ -32,7 +28,7 @@ const dataArray = [
 
      }
 
-     this.setModalVisible=this.setModalVisible(this);
+     
 
 
    }
@@ -74,10 +70,6 @@ const dataArray = [
 
    }
 
-
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
 
   _renderData(title) {
     return (
