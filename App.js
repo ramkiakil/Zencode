@@ -11,7 +11,6 @@ import { Container, Header, Content, List, ListItem,Text,Left, Right, Icon, Acco
   Card, CardItem, Button,
 } from 'native-base';
 import Spinner from 'react-native-loading-spinner-overlay';
-
 var moment = require('moment');
 
  export default class App extends Component {
@@ -24,20 +23,13 @@ var moment = require('moment');
        appApi:100,
        spinner: true,
        isConnected:null
-
-
      }
-
-     
-
-
    }
   
    componentDidMount(){
      NetInfo.isConnected.addEventListener('connectionChange',this._handleConnectivityChange);
      NetInfo.isConnected.fetch().done( (isConnected)=>{ 
        this.setState({isConnected});
-
      });
    }
 
@@ -53,11 +45,7 @@ var moment = require('moment');
 
    componentWillMount(){
      this.fetchData();
-
    }
-
-
-
      fetchData = async() =>{
      const response= await fetch("https://api.github.com/repos/crashlytics/secureudid/issues");
      const json=await response.json();
@@ -65,9 +53,6 @@ var moment = require('moment');
        data:json,
        spinner: false,
      });
-
-
-
    }
 
 
@@ -76,9 +61,7 @@ var moment = require('moment');
       <View
         style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", alignItems: "center", backgroundColor: "#A9DAD6" }}
       >
-        <Text style={{ fontWeight: "600" }}>
-
-        </Text>
+        <Text style={{ fontWeight: "600" }}></Text>
 
        </View>
     );
@@ -88,8 +71,6 @@ var moment = require('moment');
   render() {
     if(this.state.isConnected === true){ 
     return (
-    
-        
         <View style={styles.container}>
            <Spinner
           visible={this.state.spinner}
@@ -166,9 +147,6 @@ var moment = require('moment');
              ) }
              />
       </View>
-          
- 
-
     );
 
   } else {
